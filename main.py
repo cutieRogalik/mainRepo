@@ -1,3 +1,8 @@
 from importerOfTheZoo import *
-e1 = Elephant("Sosik",3,30)
-e1.play()
+Sosik = Elephant("Sosik",5,2)
+Sosik.eat('Balumba')
+Sosik.eat('Hay')
+Sosik.eat('Grass')
+Sosik.eat('Grass')
+Sosik.doSound(2)
+
