@@ -1,24 +1,43 @@
 class Elephant:
 
-    def __init__(self, name, foodPerDay, age):
-        self.Name = name
-        self.Age = age
-        self.FoodPerDay = foodPerDay
+    def __init__(self, name, age, foodPerDay):
+        self.__name = name
+        self.__age = age
+        self.__foodPerDay = foodPerDay
+        self.__isFeeded = False
+        self.__foodEated = 0
 
     def discription(self):
-        self.Species = "Elephant"
-        self.Biome = "Desert"
-        self.AreaPerIndividual = 500
-        self.Food = "Grass and Hay"
-        self.Detachment = "Herbivore"
-        self.Sound = "Woom"
+        self.__species = "Elephant"
+        self.__biome = "Desert"
+        self.__areaPerIndividual = 500
+        self.__foodTypes = ['Grass', 'Hay']
+        self.__predator = False
+        self.__sound = "Woom"
 
-    def eatUp(self):
-        print(self.Name,"did 'Eat'")
+    @property
+    def Feeded(self):
+        return self.__isFeeded
 
-    def doSound(self,number):
+    def eat(self, foodType):
+        if foodType not in self.__foodTypes:
+            print(self.__name, 'said Ya Takoe Ne Em Sore')
+            return
+        if self.__isFeeded:
+            return
+        if self.__foodEated >= self.__foodPerDay:
+            self.__isFeeded = True
+            return
+        if foodType in self.__foodTypes:
+            print(self.__name, 'ate', foodType)
+            self.__foodEated += 1
+            if self.__foodEated >= self.__foodPerDay:
+                self.__isFeeded = True
+                self.__foodEated = 0
+
+    def doSound(self, number):
         for i in range(number):
-            print(self.Name, "did", self.Sound)
+            print(self.__name, "did", self.__sound)
 
     def play(self):
-        print(self.Name, "did 'play'")
+        print(self.__name, "did 'play'")
