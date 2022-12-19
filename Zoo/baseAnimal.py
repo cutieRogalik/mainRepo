@@ -1,5 +1,5 @@
-class Animal:
-    def __init__(self, name, age, foodPerDay,species,biome,areaPerIndividual,foodTypes=[],detachment,sound):
+class baseAnimal:
+    def __init__(self, name, age, foodPerDay, species, biome, areaPerIndividual, foodTypes, detachment, sound):
         self.__name = name
         self.__age = age
         self.__foodPerDay = foodPerDay
@@ -16,10 +16,11 @@ class Animal:
     def feeded(self):
         return self.__isFeeded
 
-    def eat(self, foodType):
-        if foodType not in self.__foodTypes:
-            print(self.__name, 'said: Ya Takoe Ne Em Sore')
-            return
+    def eat(self, foodType, number):
+        for i in range(number):
+            if foodType not in self.__foodTypes:
+                print(self.__name, 'said: Ya Takoe Ne Em Sore')
+                return
 
         if foodType in self.__foodTypes:
             if self.__foodEated >= self.__foodPerDay:
