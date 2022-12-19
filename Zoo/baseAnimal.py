@@ -16,6 +16,16 @@ class baseAnimal:
     def feeded(self):
         return self.__isFeeded
 
+    @property
+    def biome(self):
+        return self.__biome
+    @property
+    def areaPerIndividual(self):
+        return self.__areaPerIndividual
+    @property
+    def detachment(self):
+        return self.__detachment
+
     def eat(self, foodType, number):
         for i in range(number):
             if foodType not in self.__foodTypes:
