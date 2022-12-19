@@ -33,7 +33,10 @@ class Valier:
         return True
 
     def addFood(self, food, number):
-        self.food[food] += number
+        if food not in self.food.keys():
+            self.food[food] = number
+        else:
+            self.food[food] += number
 
     @property
     def foodRemaining(self):
