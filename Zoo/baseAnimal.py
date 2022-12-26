@@ -32,17 +32,17 @@ class baseAnimal:
                 print(self.__name, 'said: Ya Takoe Ne Em Sore')
                 return
 
-        if foodType in self.__foodTypes:
-            if self.__foodEated >= self.__foodPerDay:
-                print(self.__name, 'said: Ya i tak Sitiy')
-                self.__isFeeded = True
-                return
-            else:
-                print(self.__name, 'ate:', foodType)
-                self.__foodEated += 1
+            if foodType in self.__foodTypes:
                 if self.__foodEated >= self.__foodPerDay:
-                    print(self.__name, 'said: Na Segodnya Vse')
+                    print(self.__name, 'said: Ya i tak Sitiy')
                     self.__isFeeded = True
+                    return
+                else:
+                    print(self.__name, 'ate:', foodType)
+                    self.__foodEated += 1
+                    if self.__foodEated >= self.__foodPerDay:
+                        print(self.__name, 'said: Na Segodnya Vse')
+                        self.__isFeeded = True
 
     def doSound(self, number):
         for i in range(number):
